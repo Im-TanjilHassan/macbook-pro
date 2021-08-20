@@ -1,0 +1,12 @@
+8GB memory price  = $0
+16GB memory price = $180
+
+256GB SSD storage price = $0
+512GB SSD storage price = $100
+1TB SSD storage price   = $180
+
+Fri, Aug Delivery    = $0
+Fri, Aug 21 Delivery = $20
+
+promo code:- stevekaku
+promo code discount = 20%
