@@ -1,136 +1,115 @@
 // ***** Total price *****
 // ***** Function For total price *****
-function totalPrice(productPrice,){
+function totalPrice(){
     // debugger;
+
+    // memory price
+    const memory = document.getElementById("memory-cost");
+    const memoryPrice = parseInt(memory.innerText);
+
+    // storage price
+    const storage = document.getElementById("storage-cost");
+    const storagePrice = parseInt(storage.innerText)
+
+    // delivery cost
+    const delivery = document.getElementById("delivery-charge");
+    const deliveryprice = parseInt(delivery.innerText)
+
     // catch total price text feild
     const totalFeild = document.getElementById("total-price");
-    const totalAmount = 1299;
-
-    // overall total price calculate
-    totalFeild.innerText = totalAmount + productPrice;
+    totalFeild.innerText = 1299 + memoryPrice + storagePrice + deliveryprice;
 }
 
 // _______________________________________________________________________
 
-
-
-// ***** Functions of Memory Card *****
-function memoryCardPricec(SmallMemory){
+// per product cost
+function productPricec(item,product){
     debugger;
 
-    // extra memory cost feild
-    const memoryCostFeild = document.getElementById("memory-cost");
-    let memoryPrice = 0;
-    
+    // All extra product cost feild
+    const productCostFeild = document.getElementById(item);
 
-    // calculate and showing the value in memory cost feild
-    if(SmallMemory == true){
-        const price = 0;
-        memoryPrice = price
-        memoryCostFeild.innerText = price;     
+    // calculate and showing the value in per product cost feild
+    if(product == 0){
+
+       	const price = 0;
+       	productCostFeild.innerText = price;     
  
     }
-    else{
+    else if(product == 180){
+
         const price = 180;
-        memoryPrice = price
-        memoryCostFeild.innerText = price;
- 
+        productCostFeild.innerText = price;
     }
 
-    totalPrice(memoryPrice)
+    else if(product == 100){
+
+        const price = 100;
+        productCostFeild.innerText = price;
+    }
+
+	else if(product == 20){
+
+	    const charge = 20;
+        productCostFeild.innerText = charge;
+
+	}
+
+    totalPrice()
+
 };
+
 
 
 // ***** Add Event For Memory Card *****
 
 // 8GB
 document.getElementById("8GB-memory").addEventListener("click", function(){
-    memoryCardPricec(true);
-
+    // productPricec("memory-cost", "memory", true);
+    productPricec("memory-cost", 0)
 })
 
 // 16Gb
 document.getElementById("16GB-memory").addEventListener("click", function(){
-    memoryCardPricec(false)
+    // productPricec("memory-cost", "memory", false)
+    productPricec("memory-cost", 180)
 
 });
 
-
-
-// ***** Function of Storage *****
-
-function storagePrice(ssd){
-
-    // catch storage cost feild
-    const storageCostFeild = document.getElementById("storage-cost");
-    let ssdPrice = 0;
-
-    // calculate and showing the value in storage cost feild
-    if(ssd == 256){
-        const price = 0;
-        ssdPrice = price
-        storageCostFeild.innerText = price;
-    }
-    else if(ssd == 512){
-        const price = 100;
-        ssdPrice = price
-        storageCostFeild.innerText = price;
-    }
-    else{
-        const price = 180;
-        ssdPrice = price
-        storageCostFeild.innerText = price;
-    }
-
-    totalPrice(ssdPrice);
-}
 
 
 // ***** Add Event For Storage *****
 
 // 256GB SSD storage
 document.getElementById("256GB-SSD").addEventListener("click", function(){
-    storagePrice(256);
+    // productPricec("storage-cost", "ssd", 256);
+    productPricec("storage-cost", 0);
 })
 
 // 512GB SSD storage
 document.getElementById("512GB-SSD").addEventListener("click", function(){
-    storagePrice(512);
+    // productPricec("storage-cost", "ssd", 512);
+    productPricec("storage-cost", 100);
 })
 
 // 1TB SSD storage
 document.getElementById("1TB-SSD").addEventListener("click", function(){
-    storagePrice(1);
+    // productPricec("storage-cost", "ssd", 1);
+    productPricec("storage-cost", 180);
 });
 
-
-
-// ***** Functions for Delivery cost *****
-function deliveryCost(cost){
-
-    // catch delivery charge feild
-    const deliveryCharge = document.getElementById("delivery-charge");
-
-    if(cost == 0){
-        const Charge = 0;
-        deliveryCharge.innerText = Charge;
-
-    }
-    else{
-        const charge = 20;
-        deliveryCharge.innerText = charge;
-    }
-}
 
 
 // ***** Add Event For Delivery cost *****
 
 // Fri, Aug Free Delivery
 document.getElementById("free-delivery").addEventListener("click", function(){
-    deliveryCost(0);
+    // productPricec("delivery-charge", "delivery", true);
+    productPricec("delivery-charge", 0);
 })
 
 // Fri, Aug 21 Costed Delivery
 document.getElementById("costed-delivery").addEventListener("click", function(){
-    deliveryCost(20);
+    // productPricec("delivery-charge", "delivery", false);
+    productPricec("delivery-charge", 20);
 });
