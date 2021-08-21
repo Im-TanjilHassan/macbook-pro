@@ -1,31 +1,3 @@
-// ***** Total price *****
-// ***** Function For total price *****
-function totalPrice(){
-    // debugger;
-
-    // memory price
-    const memory = document.getElementById("memory-cost");
-    const memoryPrice = parseInt(memory.innerText);
-
-    // storage price
-    const storage = document.getElementById("storage-cost");
-    const storagePrice = parseInt(storage.innerText)
-
-    // delivery cost
-    const delivery = document.getElementById("delivery-charge");
-    const deliveryprice = parseInt(delivery.innerText)
-
-    // catch total price text feild
-    const totalFeild = document.getElementById("total-price");
-    const calculate = 1299 + memoryPrice + storagePrice + deliveryprice; 
-    totalFeild.innerText = calculate;
-
-    const totalWithDiscount = document.getElementById("total-with-discount");
-    totalWithDiscount.innerText = calculate;
-}
-
-// _______________________________________________________________________
-
 // per product cost
 function productPricec(item,product){
     // debugger;
@@ -63,6 +35,32 @@ function productPricec(item,product){
 
 };
 
+
+// ***** Total price *****
+// ***** Function For total price *****
+function totalPrice(){
+    // debugger;
+
+    // memory price
+    const memory = document.getElementById("memory-cost");
+    const memoryPrice = parseInt(memory.innerText);
+
+    // storage price
+    const storage = document.getElementById("storage-cost");
+    const storagePrice = parseInt(storage.innerText)
+
+    // delivery cost
+    const delivery = document.getElementById("delivery-charge");
+    const deliveryprice = parseInt(delivery.innerText)
+
+    // catch total price text feild
+    const totalFeild = document.getElementById("total-price");
+    const calculate = 1299 + memoryPrice + storagePrice + deliveryprice; 
+    totalFeild.innerText = calculate;
+
+    const totalWithDiscount = document.getElementById("total-with-discount");
+    totalWithDiscount.innerText = calculate;
+}
 
 
 // ***** Add Event For Memory Card *****
