@@ -1,7 +1,5 @@
 // per product cost
 function productPricec(item,product){
-    // debugger;
-
     // All extra product cost feild
     const productCostFeild = document.getElementById(item);
 
@@ -30,7 +28,6 @@ function productPricec(item,product){
         productCostFeild.innerText = charge;
 
 	}
-
     totalPrice()
 
 };
@@ -39,7 +36,6 @@ function productPricec(item,product){
 // ***** Total price *****
 // ***** Function For total price *****
 function totalPrice(){
-    // debugger;
 
     // memory price
     const memory = document.getElementById("memory-cost");
@@ -58,6 +54,7 @@ function totalPrice(){
     const calculate = 1299 + memoryPrice + storagePrice + deliveryprice; 
     totalFeild.innerText = calculate;
 
+    // total price withoutdiscount
     const totalWithDiscount = document.getElementById("total-with-discount");
     totalWithDiscount.innerText = calculate;
 }
@@ -66,36 +63,35 @@ function totalPrice(){
 // ***** Add Event For Memory Card *****
 
 // 8GB
-document.getElementById("8GB-memory").addEventListener("click", function(){
+document.getElementById("memory-8GB").addEventListener("click", function(){
     // productPricec("memory-cost", "memory", true);
     productPricec("memory-cost", 0)
 })
 
 // 16Gb
-document.getElementById("16GB-memory").addEventListener("click", function(){
+document.getElementById("memory-16GB").addEventListener("click", function(){
     // productPricec("memory-cost", "memory", false)
     productPricec("memory-cost", 180)
 
 });
 
 
-
 // ***** Add Event For Storage *****
 
 // 256GB SSD storage
-document.getElementById("256GB-SSD").addEventListener("click", function(){
+document.getElementById("SSD-256GB").addEventListener("click", function(){
     // productPricec("storage-cost", "ssd", 256);
     productPricec("storage-cost", 0);
 })
 
 // 512GB SSD storage
-document.getElementById("512GB-SSD").addEventListener("click", function(){
+document.getElementById("SSD-512GB").addEventListener("click", function(){
     // productPricec("storage-cost", "ssd", 512);
     productPricec("storage-cost", 100);
 })
 
 // 1TB SSD storage
-document.getElementById("1TB-SSD").addEventListener("click", function(){
+document.getElementById("SSD-1TB").addEventListener("click", function(){
     // productPricec("storage-cost", "ssd", 1);
     productPricec("storage-cost", 180);
 });
