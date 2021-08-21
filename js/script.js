@@ -17,14 +17,18 @@ function totalPrice(){
 
     // catch total price text feild
     const totalFeild = document.getElementById("total-price");
-    totalFeild.innerText = 1299 + memoryPrice + storagePrice + deliveryprice;
+    const calculate = 1299 + memoryPrice + storagePrice + deliveryprice; 
+    totalFeild.innerText = calculate;
+
+    const totalWithDiscount = document.getElementById("total-with-discount");
+    totalWithDiscount.innerText = calculate;
 }
 
 // _______________________________________________________________________
 
 // per product cost
 function productPricec(item,product){
-    debugger;
+    // debugger;
 
     // All extra product cost feild
     const productCostFeild = document.getElementById(item);
@@ -113,3 +117,27 @@ document.getElementById("costed-delivery").addEventListener("click", function(){
     // productPricec("delivery-charge", "delivery", false);
     productPricec("delivery-charge", 20);
 });
+
+
+// promo code
+
+// promo code input value
+function promoCode(){
+    const inputFeild = document.getElementById("promo-input");
+    const inputValue = inputFeild.value
+    // console.log("nothig")
+    if(inputValue == "stevekaku"){
+        // console.log("yes")
+        const totalAmount = document.getElementById("total-with-discount");
+        const amount =  parseInt(totalAmount.innerText);
+        const discount = amount - (amount * 0.2);
+        totalAmount.innerText = discount;
+    }
+    inputFeild.value = ""
+}
+
+
+// applu button event
+document.getElementById("apply-btn").addEventListener("click", function(){
+    promoCode()
+})
